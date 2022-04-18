@@ -36,7 +36,9 @@ class GitHubListTileCard extends HookConsumerWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: Text(
-                      'langage : ${githubRepository!.language}',
+                      githubRepository!.language.isEmpty
+                          ? 'langage : none'
+                          : 'langage : ${githubRepository!.language}',
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

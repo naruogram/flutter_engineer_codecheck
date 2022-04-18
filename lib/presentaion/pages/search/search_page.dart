@@ -15,12 +15,13 @@ class SearchPage extends ConsumerWidget {
     //多様な画面のサイズに対応するために比率で描画するために最初に画面のサイズを定義する
     final size = MediaQuery.of(context).size;
     return Scaffold(
-        body: GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Center(
-                child: Padding(
-              padding: EdgeInsets.only(top: size.height * 0.08),
-              child: Column(children: [
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: size.height * 0.08),
+            child: Column(
+              children: [
                 SearchBar(
                   hintText: '入力',
                   controller: notifier.searchController,
@@ -32,36 +33,42 @@ class SearchPage extends ConsumerWidget {
                   height: 25,
                 ),
                 Expanded(
-                    child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: 20.0,
-                        ),
-                        child: ListView.separated(
-                          itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return SearchDetailPage(
-                                          githubRepository:
-                                              state.githubRepositoryList[index],
-                                        );
-                                      },
-                                    ),
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                      horizontal: 20.0,
+                    ),
+                    child: ListView.separated(
+                      itemBuilder: (BuildContext context, int index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return SearchDetailPage(
+                                    githubRepository:
+                                        state.githubRepositoryList[index],
                                   );
                                 },
-                                child: GitHubListTileCard(
-                                  githubRepository:
-                                      state.githubRepositoryList[index],
-                                ));
+                              ),
+                            );
                           },
-                          itemCount: state.githubRepositoryList.length,
-                          separatorBuilder: (BuildContext context, int index) {
-                            return const SizedBox(height: 10);
-                          },
-                        ))),
-              ]),
-            ))));
+                          child: GitHubListTileCard(
+                            githubRepository: state.githubRepositoryList[index],
+                          ),
+                        );
+                      },
+                      itemCount: state.githubRepositoryList.length,
+                      separatorBuilder: (BuildContext context, int index) {
+                        return const SizedBox(height: 10);
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
