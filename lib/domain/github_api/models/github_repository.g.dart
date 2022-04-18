@@ -15,7 +15,7 @@ _$_GitHubRepository _$$_GitHubRepositoryFromJson(Map<String, dynamic> json) =>
       watchersCount: json['watchers_count'] as int? ?? 0,
       forksCount: json['forks_count'] as int? ?? 0,
       openIssuesCount: json['open_issues_count'] as int? ?? 0,
-      url: json['url'] as String? ?? '',
+      htmlUrl: json['html_url'] as String? ?? '',
       owner: json['owner'] == null
           ? const Owner()
           : Owner.fromJson(json['owner'] as Map<String, dynamic>),
@@ -30,7 +30,7 @@ Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
       'watchers_count': instance.watchersCount,
       'forks_count': instance.forksCount,
       'open_issues_count': instance.openIssuesCount,
-      'url': instance.url,
+      'html_url': instance.htmlUrl,
       'owner': instance.owner,
     };
 

@@ -12,12 +12,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations: 
+    sdk: flutter  
+  intl: "^0.17.0"
 
   hooks_riverpod: 
   flutter_hooks: 
   flutter_state_notifier: 
   cupertino_icons: ^1.0.2
   http: 
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:
@@ -31,7 +35,7 @@ dev_dependencies:
 
 
 flutter:
-
+  generate: true
   uses-material-design: true
   assets:
     - assets/images/
