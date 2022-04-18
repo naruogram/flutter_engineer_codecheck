@@ -13,7 +13,7 @@ class GitHubRepository with _$GitHubRepository {
     @Default(0) @JsonKey(name: 'watchers_count') int watchersCount,
     @Default(0) @JsonKey(name: 'forks_count') int forksCount,
     @Default(0) @JsonKey(name: 'open_issues_count') int openIssuesCount,
-    @Default('') String url,
+    @Default('') @JsonKey(name: 'html_url') String htmlUrl,
     @Default(Owner()) Owner owner,
   }) = _GitHubRepository;
 

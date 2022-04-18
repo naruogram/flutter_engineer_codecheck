@@ -18,6 +18,7 @@ dependencies:
   flutter_state_notifier: 
   cupertino_icons: ^1.0.2
   http: 
+  url_launcher: ^6.0.20
 
 dev_dependencies:
   flutter_test:
