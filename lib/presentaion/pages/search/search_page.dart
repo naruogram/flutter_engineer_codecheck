@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_engineer_codecheck/l10n/l10n.dart';
 import 'package:flutter_engineer_codecheck/presentaion/pages/search/search_detail_page.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/card/github_list_tile_card.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/search_bar/search_bar.dart';
@@ -14,6 +15,7 @@ class SearchPage extends ConsumerWidget {
     final notifier = ref.read(githubRepositoryNotifierProvider.notifier);
     //多様な画面のサイズに対応するために比率で描画するために最初に画面のサイズを定義する
     final size = MediaQuery.of(context).size;
+    final l10n = L10n.of(context)!;
     return Scaffold(
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -23,7 +25,7 @@ class SearchPage extends ConsumerWidget {
             child: Column(
               children: [
                 SearchBar(
-                  hintText: '入力',
+                  hintText: l10n.searchRepository,
                   controller: notifier.searchController,
                   onFieldSubmitted: (String value) {
                     notifier.searchRepository(searchWord: value);

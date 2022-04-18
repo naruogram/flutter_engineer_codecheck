@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_engineer_codecheck/common/color.dart';
 import 'package:flutter_engineer_codecheck/common/helpers/helpers.dart';
 import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/card/basic_list_card_tile.dart';
@@ -12,6 +13,7 @@ class SearchDetailPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -28,7 +30,9 @@ class SearchDetailPage extends ConsumerWidget {
                   left: MediaQuery.of(context).size.width * 0.05,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Helpers.isDarkMode(context)
+                          ? kPrimaryColorDark
+                          : kPrimaryColor,
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: IconButton(
@@ -53,7 +57,6 @@ class SearchDetailPage extends ConsumerWidget {
                 child: Text(
                   githubRepository.fullName,
                   style: const TextStyle(
-                    color: Colors.black,
                     fontWeight: FontWeight.w600,
                     fontSize: 24,
                   ),

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Helpers {
@@ -7,5 +8,10 @@ class Helpers {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  static bool isDarkMode(BuildContext context) {
+    final Brightness brightness = MediaQuery.platformBrightnessOf(context);
+    return brightness == Brightness.dark;
   }
 }

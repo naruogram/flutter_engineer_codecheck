@@ -10,19 +10,26 @@ class BackGroundImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
         color: Colors.grey,
         child: image.isEmpty //imageがない場合はdefaultの画像を表示する
             ? Image.asset(
                 'assets/images/github_icon.jpg',
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.35,
+                //横向き対応
+                height: size.height > size.width
+                    ? size.height * 0.35
+                    : size.height * 0.7,
                 fit: BoxFit.cover,
               )
             : Image.network(
                 image,
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.35,
+                //横向き対応
+                height: size.height > size.width
+                    ? size.height * 0.35
+                    : size.height * 0.75,
                 fit: BoxFit.cover,
               ));
   }
