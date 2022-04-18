@@ -3,7 +3,6 @@ import 'package:flutter_engineer_codecheck/presentaion/pages/search/search_detai
 import 'package:flutter_engineer_codecheck/presentaion/pages/search/search_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-
 void main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -13,9 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SearchPage(),
+      home: const SearchPage(),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
     );
   }
 }
