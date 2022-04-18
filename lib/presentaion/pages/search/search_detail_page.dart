@@ -13,7 +13,7 @@ class SearchDetailPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
-   
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -31,8 +31,8 @@ class SearchDetailPage extends ConsumerWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Helpers.isDarkMode(context)
-                      ? kPrimaryColorDark
-                      : kPrimaryColor,
+                          ? kPrimaryColorDark
+                          : kPrimaryColor,
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: IconButton(

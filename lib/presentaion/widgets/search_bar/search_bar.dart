@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SearchBar extends ConsumerWidget {
+class SearchBar extends StatelessWidget {
   const SearchBar(
       {Key? key,
       required this.hintText,
@@ -13,13 +12,17 @@ class SearchBar extends ConsumerWidget {
   final ValueChanged<String> onFieldSubmitted;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: MediaQuery.of(context).size.height * 0.05,
+            width: size.width * 0.8,
+            //横向き対応
+            height: size.height > size.width
+                ? size.height * 0.05
+                : size.height * 0.1,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.grey,
