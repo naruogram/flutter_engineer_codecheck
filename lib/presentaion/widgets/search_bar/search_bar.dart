@@ -5,12 +5,12 @@ class SearchBar extends ConsumerWidget {
   const SearchBar(
       {Key? key,
       required this.hintText,
-      this.controller,
-      this.onFieldSubmitted})
+      required this.controller,
+      required this.onFieldSubmitted})
       : super(key: key);
   final String hintText;
-  final TextEditingController? controller;
-  final ValueChanged<String>? onFieldSubmitted;
+  final TextEditingController controller;
+  final ValueChanged<String> onFieldSubmitted;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
