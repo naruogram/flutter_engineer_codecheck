@@ -1,4 +1,6 @@
 {
     "@@locale": "ja",
-    "searchRepository": "リポジトリを検索"
+    "searchRepository": "リポジトリを検索",
+    "pleaseEnter": "入力してください",
+    "noDataFound": "検索結果が見つかりません"
 }

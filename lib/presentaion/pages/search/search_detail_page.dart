@@ -22,9 +22,11 @@ class SearchDetailPage extends ConsumerWidget {
               clipBehavior: Clip.none,
               alignment: Alignment.center,
               children: [
+                //背景画像
                 BackGroundImage(
                   image: githubRepository.owner.avaterUrl,
                 ),
+                //戻るボタン
                 Positioned(
                   top: MediaQuery.of(context).size.height * 0.05,
                   left: MediaQuery.of(context).size.width * 0.05,
@@ -50,6 +52,7 @@ class SearchDetailPage extends ConsumerWidget {
               width: size.width * 0.9,
               child: GestureDetector(
                 onTap: () {
+                  //textを押した際にURL先に飛ぶ
                   Helpers.launchURL(
                     url: githubRepository.htmlUrl,
                   );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class BasicListTileCard extends HookConsumerWidget {
+class BasicListTileCard extends StatelessWidget {
   const BasicListTileCard({
     Key? key,
     required this.icon,
@@ -11,7 +10,7 @@ class BasicListTileCard extends HookConsumerWidget {
   final IconData icon;
   final String title;
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
       child: Row(

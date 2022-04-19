@@ -1,4 +1,6 @@
 {
     "@@locale": "en",
-    "searchRepository": "Search repository"
+    "searchRepository": "Search repository",
+    "pleaseEnter": "Please Enter",
+    "noDataFound": "No Data Found"
 }
