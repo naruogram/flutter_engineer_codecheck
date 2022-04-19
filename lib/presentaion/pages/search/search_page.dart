@@ -28,44 +28,53 @@ class SearchPage extends ConsumerWidget {
                   hintText: l10n.searchRepository,
                   controller: notifier.searchController,
                   onFieldSubmitted: (String value) {
+                    notifier.isLoading = true;
                     notifier.searchRepository(searchWord: value);
                   },
                 ),
                 const SizedBox(
                   height: 25,
                 ),
-                Expanded(
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 20.0,
-                    ),
-                    child: ListView.separated(
-                      itemBuilder: (BuildContext context, int index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return SearchDetailPage(
-                                    githubRepository:
-                                        state.githubRepositoryList[index],
+                notifier.isLoading
+                    ? const SizedBox(
+                        height: 50,
+                        width: 50,
+                        child: CircularProgressIndicator(),
+                      )
+                    : Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 20.0,
+                          ),
+                          child: ListView.separated(
+                            itemBuilder: (BuildContext context, int index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return SearchDetailPage(
+                                          githubRepository:
+                                              state.githubRepositoryList[index],
+                                        );
+                                      },
+                                    ),
                                   );
                                 },
-                              ),
-                            );
-                          },
-                          child: GitHubListTileCard(
-                            githubRepository: state.githubRepositoryList[index],
+                                child: GitHubListTileCard(
+                                  githubRepository:
+                                      state.githubRepositoryList[index],
+                                ),
+                              );
+                            },
+                            itemCount: state.githubRepositoryList.length,
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return const SizedBox(height: 10);
+                            },
                           ),
-                        );
-                      },
-                      itemCount: state.githubRepositoryList.length,
-                      separatorBuilder: (BuildContext context, int index) {
-                        return const SizedBox(height: 10);
-                      },
-                    ),
-                  ),
-                ),
+                        ),
+                      ),
               ],
             ),
           ),

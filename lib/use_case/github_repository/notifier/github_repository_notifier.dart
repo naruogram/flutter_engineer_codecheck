@@ -21,10 +21,21 @@ class GitHubRepositoryNotifier extends StateNotifier<GitHubRepositoryState> {
   }
 
   final searchController = TextEditingController();
+  bool isLoading = false;
 //httpsリクエストをたたいて、結果をjsonで受け取る
   void searchRepository({required String searchWord}) async {
     final githubApi = _ref.read(githubRepositoryServiceProvider);
-    final list = await githubApi.searchRepositories(searchWord: searchWord);
-    state = state.copyWith(githubRepositoryList: list);
+    try {
+      final result = await githubApi.searchRepositories(searchWord: searchWord);
+      if (result.isError) {
+        isLoading = false;
+        return;
+      }
+      state = state.copyWith(githubRepositoryList: result.asValue!.value);
+    } on Exception catch (e) {
+      isLoading = false;
+      return;
+    }
+    isLoading = false;
   }
 }
