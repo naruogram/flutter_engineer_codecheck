@@ -12,6 +12,7 @@ class GitHubApiService {
   Future<Result<List<GitHubRepository>>> searchRepositories({
     required String searchWord,
   }) async {
+    //searchWordを使ってURLの生成
     final response = await http.get(
       Uri.parse(
         'https://api.github.com/search/repositories?q=$searchWord&sort=stars&order=desc',

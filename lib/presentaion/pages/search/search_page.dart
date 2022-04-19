@@ -28,53 +28,70 @@ class SearchPage extends ConsumerWidget {
                   hintText: l10n.searchRepository,
                   controller: notifier.searchController,
                   onFieldSubmitted: (String value) {
-                    notifier.isLoading = true;
-                    notifier.searchRepository(searchWord: value);
+                    if (value.isNotEmpty) {
+                      notifier.isLoading = true;
+                      notifier.searchRepository(searchWord: value);
+                    }
                   },
                 ),
                 const SizedBox(
                   height: 25,
                 ),
+                //loadingしているとき
                 notifier.isLoading
                     ? const SizedBox(
                         height: 50,
                         width: 50,
                         child: CircularProgressIndicator(),
                       )
-                    : Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(
-                            horizontal: 20.0,
-                          ),
-                          child: ListView.separated(
-                            itemBuilder: (BuildContext context, int index) {
-                              return GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return SearchDetailPage(
-                                          githubRepository:
-                                              state.githubRepositoryList[index],
-                                        );
-                                      },
+                    //loadingしていないとき
+                    : state.githubRepositoryList.isEmpty
+                        ? Padding(
+                            padding: EdgeInsets.only(
+                              top: size.height * 0.30,
+                            ),
+                            child: Text(
+                              //1回目の検索をしているかどうかを判別して文字を変更する
+                              notifier.isFirstSearched
+                                  ? l10n.noDataFound
+                                  : l10n.pleaseEnter,
+                            ),
+                          )
+                        : Expanded(
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(
+                                horizontal: 20.0,
+                              ),
+                              child: ListView.separated(
+                                itemBuilder: (BuildContext context, int index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      //Cardを押した際に画面遷移する
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return SearchDetailPage(
+                                              githubRepository: state
+                                                  .githubRepositoryList[index],
+                                            );
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    child: GitHubListTileCard(
+                                      githubRepository:
+                                          state.githubRepositoryList[index],
                                     ),
                                   );
                                 },
-                                child: GitHubListTileCard(
-                                  githubRepository:
-                                      state.githubRepositoryList[index],
-                                ),
-                              );
-                            },
-                            itemCount: state.githubRepositoryList.length,
-                            separatorBuilder:
-                                (BuildContext context, int index) {
-                              return const SizedBox(height: 10);
-                            },
+                                itemCount: state.githubRepositoryList.length,
+                                separatorBuilder:
+                                    (BuildContext context, int index) {
+                                  return const SizedBox(height: 10);
+                                },
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
               ],
             ),
           ),

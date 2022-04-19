@@ -22,6 +22,7 @@ class GitHubRepositoryNotifier extends StateNotifier<GitHubRepositoryState> {
 
   final searchController = TextEditingController();
   bool isLoading = false;
+  bool isFirstSearched = false;
 //httpsリクエストをたたいて、結果をjsonで受け取る
   void searchRepository({required String searchWord}) async {
     final githubApi = _ref.read(githubRepositoryServiceProvider);
@@ -37,5 +38,6 @@ class GitHubRepositoryNotifier extends StateNotifier<GitHubRepositoryState> {
       return;
     }
     isLoading = false;
+    isFirstSearched = true;
   }
 }
