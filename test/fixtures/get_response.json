@@ -1,0 +1,17 @@
+{
+    "items": [
+        {
+            "full_name": "sample/sample",
+            "description": "sampleです",
+            "language": "dart",
+            "stargazers_count": 10,
+            "watchers_count": 20,
+            "forks_count": 30,
+            "open_issues_count": 40,
+            "owner": {
+                "avatar_url": "sample.com"
+            },
+            "html_url": "https//sample.jp"
+        }
+    ]
+}
