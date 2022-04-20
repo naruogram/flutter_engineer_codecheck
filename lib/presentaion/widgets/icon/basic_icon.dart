@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 
 class BasicIcon extends StatelessWidget {
   const BasicIcon({
@@ -11,8 +12,8 @@ class BasicIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 70,
-      height: 70,
+      width: 70.w,
+      height: 70.h,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: image.isEmpty //imageがないときはdefaultの画像を表示する

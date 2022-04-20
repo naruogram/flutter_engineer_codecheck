@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar(
@@ -31,13 +32,21 @@ class SearchBar extends StatelessWidget {
               onFieldSubmitted: onFieldSubmitted,
               decoration: InputDecoration(
                   hintText: hintText,
-                  hintStyle: const TextStyle(color: Colors.white),
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                    //横向きの対応
+                    fontSize: size.height > size.width ? 14.sp : 6.sp,
+                  ),
                   border: InputBorder.none,
                   prefixIcon: const Icon(
                     Icons.search,
                     color: Colors.white,
                   )),
-              style: const TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+                //横向きの対応
+                fontSize: size.height > size.width ? 14.sp : 6.sp,
+              ),
             ))
       ],
     );
