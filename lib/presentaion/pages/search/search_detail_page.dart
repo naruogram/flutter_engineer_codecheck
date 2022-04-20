@@ -4,6 +4,7 @@ import 'package:flutter_engineer_codecheck/common/helpers/helpers.dart';
 import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/card/basic_list_card_tile.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/images/background_image.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SearchDetailPage extends ConsumerWidget {
@@ -31,6 +32,8 @@ class SearchDetailPage extends ConsumerWidget {
                   top: MediaQuery.of(context).size.height * 0.05,
                   left: MediaQuery.of(context).size.width * 0.05,
                   child: Container(
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
                       color: Helpers.isDarkMode(context)
                           ? kPrimaryColorDark
@@ -57,11 +60,12 @@ class SearchDetailPage extends ConsumerWidget {
                     url: githubRepository.htmlUrl,
                   );
                 },
+                //リポジトリ名
                 child: Text(
                   githubRepository.fullName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 24,
+                    fontSize: 24.sp,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -70,30 +74,37 @@ class SearchDetailPage extends ConsumerWidget {
             SizedBox(
               height: size.height * 0.05,
             ),
+            //言語
             BasicListTileCard(
               icon: Icons.language,
               title: 'langage : ${githubRepository.language}',
             ),
+            //star数
             BasicListTileCard(
               icon: Icons.star,
               title: 'stars : ${githubRepository.stargazersCount}',
             ),
+            //watcher数
             BasicListTileCard(
               icon: Icons.remove_red_eye_outlined,
               title: 'watchers : ${githubRepository.watchersCount}',
             ),
+            //forks数
             BasicListTileCard(
               icon: Icons.merge_type,
               title: 'forks : ${githubRepository.forksCount}',
             ),
+            //issues数
             BasicListTileCard(
               icon: Icons.arrow_drop_down_circle_outlined,
               title: 'issues : ${githubRepository.openIssuesCount}',
             ),
+            //概要
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 15.h),
               child: Text(
                 githubRepository.description,
+                style: TextStyle(fontSize: 12.sp),
               ),
             ),
           ],

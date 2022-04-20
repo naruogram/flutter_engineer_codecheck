@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/icon/basic_icon.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 
 class GitHubListTileCard extends StatelessWidget {
   const GitHubListTileCard({Key? key, this.githubRepository}) : super(key: key);
   final GitHubRepository? githubRepository;
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
@@ -16,7 +18,10 @@ class GitHubListTileCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                margin: const EdgeInsets.all(10),
+                //横向きに対応
+                margin: size.height > size.width
+                    ? EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w)
+                    : EdgeInsets.symmetric(vertical: 50.h, horizontal: 10.w),
                 child: BasicIcon(image: githubRepository!.owner.avaterUrl),
               ),
               Column(
@@ -27,10 +32,11 @@ class GitHubListTileCard extends StatelessWidget {
                     child: Text(
                       githubRepository!.fullName,
                       overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 10.sp),
                     ),
                   ),
-                  const SizedBox(
-                    height: 5,
+                  SizedBox(
+                    height: 5.h,
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.6,
@@ -38,6 +44,7 @@ class GitHubListTileCard extends StatelessWidget {
                       githubRepository!.language.isEmpty
                           ? 'langage : none'
                           : 'langage : ${githubRepository!.language}',
+                      style: TextStyle(fontSize: 10.sp),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

@@ -22,6 +22,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: 
   url_launcher: ^6.0.20
+  flutter_screenutil: ^5.4.0+1
 
 dev_dependencies:
   flutter_test:

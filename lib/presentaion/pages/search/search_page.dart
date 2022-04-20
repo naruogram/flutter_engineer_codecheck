@@ -5,6 +5,7 @@ import 'package:flutter_engineer_codecheck/presentaion/widgets/card/github_list_
 import 'package:flutter_engineer_codecheck/presentaion/widgets/search_bar/search_bar.dart';
 import 'package:flutter_engineer_codecheck/use_case/github_repository/notifier/github_repository_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SearchPage extends ConsumerWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class SearchPage extends ConsumerWidget {
         onTap: () => FocusScope.of(context).unfocus(),
         child: Center(
           child: Padding(
-            padding: EdgeInsets.only(top: size.height * 0.08),
+            padding: EdgeInsets.only(top: size.height * 0.08.h),
             child: Column(
               children: [
                 SearchBar(
@@ -34,17 +35,18 @@ class SearchPage extends ConsumerWidget {
                     }
                   },
                 ),
-                const SizedBox(
-                  height: 25,
+                SizedBox(
+                  height: 25.h,
                 ),
                 //loadingしているとき
                 notifier.isLoading
-                    ? const SizedBox(
+                    ? SizedBox(
                         height: 50,
                         width: 50,
                         child: CircularProgressIndicator(),
                       )
                     //loadingしていないとき
+                    //検索前、検索結果がなかった時の判別
                     : state.githubRepositoryList.isEmpty
                         ? Padding(
                             padding: EdgeInsets.only(
@@ -55,12 +57,14 @@ class SearchPage extends ConsumerWidget {
                               notifier.isFirstSearched
                                   ? l10n.noDataFound
                                   : l10n.pleaseEnter,
+                              style: TextStyle(fontSize: 15.sp),
                             ),
                           )
+                        //リポジトリ名が書かれているCard
                         : Expanded(
                             child: Container(
-                              margin: const EdgeInsets.symmetric(
-                                horizontal: 20.0,
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 20.0.w,
                               ),
                               child: ListView.separated(
                                 itemBuilder: (BuildContext context, int index) {
@@ -87,7 +91,7 @@ class SearchPage extends ConsumerWidget {
                                 itemCount: state.githubRepositoryList.length,
                                 separatorBuilder:
                                     (BuildContext context, int index) {
-                                  return const SizedBox(height: 10);
+                                  return SizedBox(height: 10.h);
                                 },
                               ),
                             ),
