@@ -1,10 +1,6 @@
-// JSON のデコードを行うため
 import 'dart:convert';
-
-// テストパッケージとテスト対象のコードを読み込みます
 import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'fixtures/fixure.dart';
 
 void main() {
