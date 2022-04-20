@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 
 class BasicListTileCard extends StatelessWidget {
   const BasicListTileCard({
@@ -16,10 +17,13 @@ class BasicListTileCard extends StatelessWidget {
       child: Row(
         children: [
           Icon(icon),
-          const SizedBox(
-            width: 30,
+          SizedBox(
+            width: 30.w,
           ),
-          Text(title)
+          Text(
+            title,
+            style: TextStyle(fontSize: 12.sp),
+          )
         ],
       ),
     );
