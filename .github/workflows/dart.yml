@@ -1,4 +1,3 @@
-# ワークフロー名を定義(任意の名称)
 name: flutter analyze
 
 on:
