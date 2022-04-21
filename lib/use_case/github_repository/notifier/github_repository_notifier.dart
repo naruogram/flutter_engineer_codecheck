@@ -32,9 +32,11 @@ class GitHubRepositoryNotifier extends StateNotifier<GitHubRepositoryState> {
         isLoading = false;
         return;
       }
+      print(result.asValue!.value);
       state = state.copyWith(githubRepositoryList: result.asValue!.value);
     } on Exception catch (e) {
       isLoading = false;
+      print(e);
       return;
     }
     isLoading = false;

@@ -17,7 +17,7 @@ void main() {
     expect(result.watchersCount, 20);
     expect(result.forksCount, 30);
     expect(result.openIssuesCount, 40);
-    expect(result.owner.avaterUrl, "sample.com");
+    expect(result.owner.avatarUrl, "sample.com");
     expect(result.htmlUrl, "https//sample.jp");
   });
   ;

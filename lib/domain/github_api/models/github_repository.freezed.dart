@@ -23,15 +23,15 @@ class _$GitHubRepositoryTearOff {
   const _$GitHubRepositoryTearOff();
 
   _GitHubRepository call(
-      {@JsonKey(name: 'full_name') String fullName = '',
+      {String fullName = '',
       String description = '',
       String language = '',
-      @JsonKey(name: 'stargazers_count') int stargazersCount = 0,
-      @JsonKey(name: 'watchers_count') int watchersCount = 0,
-      @JsonKey(name: 'forks_count') int forksCount = 0,
-      @JsonKey(name: 'open_issues_count') int openIssuesCount = 0,
-      @JsonKey(name: 'html_url') String htmlUrl = '',
-      Owner owner = const Owner()}) {
+      int stargazersCount = 0,
+      int watchersCount = 0,
+      int forksCount = 0,
+      int openIssuesCount = 0,
+      String htmlUrl = '',
+      Owner owner = const Owner(avatarUrl: '')}) {
     return _GitHubRepository(
       fullName: fullName,
       description: description,
@@ -55,19 +55,13 @@ const $GitHubRepository = _$GitHubRepositoryTearOff();
 
 /// @nodoc
 mixin _$GitHubRepository {
-  @JsonKey(name: 'full_name')
   String get fullName => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
-  @JsonKey(name: 'stargazers_count')
   int get stargazersCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'watchers_count')
   int get watchersCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'forks_count')
   int get forksCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'open_issues_count')
   int get openIssuesCount => throw _privateConstructorUsedError;
-  @JsonKey(name: 'html_url')
   String get htmlUrl => throw _privateConstructorUsedError;
   Owner get owner => throw _privateConstructorUsedError;
 
@@ -83,14 +77,14 @@ abstract class $GitHubRepositoryCopyWith<$Res> {
           GitHubRepository value, $Res Function(GitHubRepository) then) =
       _$GitHubRepositoryCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'full_name') String fullName,
+      {String fullName,
       String description,
       String language,
-      @JsonKey(name: 'stargazers_count') int stargazersCount,
-      @JsonKey(name: 'watchers_count') int watchersCount,
-      @JsonKey(name: 'forks_count') int forksCount,
-      @JsonKey(name: 'open_issues_count') int openIssuesCount,
-      @JsonKey(name: 'html_url') String htmlUrl,
+      int stargazersCount,
+      int watchersCount,
+      int forksCount,
+      int openIssuesCount,
+      String htmlUrl,
       Owner owner});
 
   $OwnerCopyWith<$Res> get owner;
@@ -173,14 +167,14 @@ abstract class _$GitHubRepositoryCopyWith<$Res>
       __$GitHubRepositoryCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'full_name') String fullName,
+      {String fullName,
       String description,
       String language,
-      @JsonKey(name: 'stargazers_count') int stargazersCount,
-      @JsonKey(name: 'watchers_count') int watchersCount,
-      @JsonKey(name: 'forks_count') int forksCount,
-      @JsonKey(name: 'open_issues_count') int openIssuesCount,
-      @JsonKey(name: 'html_url') String htmlUrl,
+      int stargazersCount,
+      int watchersCount,
+      int forksCount,
+      int openIssuesCount,
+      String htmlUrl,
       Owner owner});
 
   @override
@@ -255,21 +249,21 @@ class __$GitHubRepositoryCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GitHubRepository implements _GitHubRepository {
   const _$_GitHubRepository(
-      {@JsonKey(name: 'full_name') this.fullName = '',
+      {this.fullName = '',
       this.description = '',
       this.language = '',
-      @JsonKey(name: 'stargazers_count') this.stargazersCount = 0,
-      @JsonKey(name: 'watchers_count') this.watchersCount = 0,
-      @JsonKey(name: 'forks_count') this.forksCount = 0,
-      @JsonKey(name: 'open_issues_count') this.openIssuesCount = 0,
-      @JsonKey(name: 'html_url') this.htmlUrl = '',
-      this.owner = const Owner()});
+      this.stargazersCount = 0,
+      this.watchersCount = 0,
+      this.forksCount = 0,
+      this.openIssuesCount = 0,
+      this.htmlUrl = '',
+      this.owner = const Owner(avatarUrl: '')});
 
   factory _$_GitHubRepository.fromJson(Map<String, dynamic> json) =>
       _$$_GitHubRepositoryFromJson(json);
 
+  @JsonKey()
   @override
-  @JsonKey(name: 'full_name')
   final String fullName;
   @JsonKey()
   @override
@@ -277,20 +271,20 @@ class _$_GitHubRepository implements _GitHubRepository {
   @JsonKey()
   @override
   final String language;
+  @JsonKey()
   @override
-  @JsonKey(name: 'stargazers_count')
   final int stargazersCount;
+  @JsonKey()
   @override
-  @JsonKey(name: 'watchers_count')
   final int watchersCount;
+  @JsonKey()
   @override
-  @JsonKey(name: 'forks_count')
   final int forksCount;
+  @JsonKey()
   @override
-  @JsonKey(name: 'open_issues_count')
   final int openIssuesCount;
+  @JsonKey()
   @override
-  @JsonKey(name: 'html_url')
   final String htmlUrl;
   @JsonKey()
   @override
@@ -348,40 +342,34 @@ class _$_GitHubRepository implements _GitHubRepository {
 
 abstract class _GitHubRepository implements GitHubRepository {
   const factory _GitHubRepository(
-      {@JsonKey(name: 'full_name') String fullName,
+      {String fullName,
       String description,
       String language,
-      @JsonKey(name: 'stargazers_count') int stargazersCount,
-      @JsonKey(name: 'watchers_count') int watchersCount,
-      @JsonKey(name: 'forks_count') int forksCount,
-      @JsonKey(name: 'open_issues_count') int openIssuesCount,
-      @JsonKey(name: 'html_url') String htmlUrl,
+      int stargazersCount,
+      int watchersCount,
+      int forksCount,
+      int openIssuesCount,
+      String htmlUrl,
       Owner owner}) = _$_GitHubRepository;
 
   factory _GitHubRepository.fromJson(Map<String, dynamic> json) =
       _$_GitHubRepository.fromJson;
 
   @override
-  @JsonKey(name: 'full_name')
   String get fullName;
   @override
   String get description;
   @override
   String get language;
   @override
-  @JsonKey(name: 'stargazers_count')
   int get stargazersCount;
   @override
-  @JsonKey(name: 'watchers_count')
   int get watchersCount;
   @override
-  @JsonKey(name: 'forks_count')
   int get forksCount;
   @override
-  @JsonKey(name: 'open_issues_count')
   int get openIssuesCount;
   @override
-  @JsonKey(name: 'html_url')
   String get htmlUrl;
   @override
   Owner get owner;
@@ -399,9 +387,9 @@ Owner _$OwnerFromJson(Map<String, dynamic> json) {
 class _$OwnerTearOff {
   const _$OwnerTearOff();
 
-  _Owner call({@JsonKey(name: 'avatar_url') String avaterUrl = ''}) {
+  _Owner call({String avatarUrl = ''}) {
     return _Owner(
-      avaterUrl: avaterUrl,
+      avatarUrl: avatarUrl,
     );
   }
 
@@ -415,8 +403,7 @@ const $Owner = _$OwnerTearOff();
 
 /// @nodoc
 mixin _$Owner {
-  @JsonKey(name: 'avatar_url')
-  String get avaterUrl => throw _privateConstructorUsedError;
+  String get avatarUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -427,7 +414,7 @@ mixin _$Owner {
 abstract class $OwnerCopyWith<$Res> {
   factory $OwnerCopyWith(Owner value, $Res Function(Owner) then) =
       _$OwnerCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'avatar_url') String avaterUrl});
+  $Res call({String avatarUrl});
 }
 
 /// @nodoc
@@ -440,12 +427,12 @@ class _$OwnerCopyWithImpl<$Res> implements $OwnerCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? avaterUrl = freezed,
+    Object? avatarUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      avaterUrl: avaterUrl == freezed
-          ? _value.avaterUrl
-          : avaterUrl // ignore: cast_nullable_to_non_nullable
+      avatarUrl: avatarUrl == freezed
+          ? _value.avatarUrl
+          : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -456,7 +443,7 @@ abstract class _$OwnerCopyWith<$Res> implements $OwnerCopyWith<$Res> {
   factory _$OwnerCopyWith(_Owner value, $Res Function(_Owner) then) =
       __$OwnerCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'avatar_url') String avaterUrl});
+  $Res call({String avatarUrl});
 }
 
 /// @nodoc
@@ -470,12 +457,12 @@ class __$OwnerCopyWithImpl<$Res> extends _$OwnerCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? avaterUrl = freezed,
+    Object? avatarUrl = freezed,
   }) {
     return _then(_Owner(
-      avaterUrl: avaterUrl == freezed
-          ? _value.avaterUrl
-          : avaterUrl // ignore: cast_nullable_to_non_nullable
+      avatarUrl: avatarUrl == freezed
+          ? _value.avatarUrl
+          : avatarUrl // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -484,18 +471,18 @@ class __$OwnerCopyWithImpl<$Res> extends _$OwnerCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Owner implements _Owner {
-  const _$_Owner({@JsonKey(name: 'avatar_url') this.avaterUrl = ''});
+  const _$_Owner({this.avatarUrl = ''});
 
   factory _$_Owner.fromJson(Map<String, dynamic> json) =>
       _$$_OwnerFromJson(json);
 
+  @JsonKey()
   @override
-  @JsonKey(name: 'avatar_url')
-  final String avaterUrl;
+  final String avatarUrl;
 
   @override
   String toString() {
-    return 'Owner(avaterUrl: $avaterUrl)';
+    return 'Owner(avatarUrl: $avatarUrl)';
   }
 
   @override
@@ -503,12 +490,12 @@ class _$_Owner implements _Owner {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Owner &&
-            const DeepCollectionEquality().equals(other.avaterUrl, avaterUrl));
+            const DeepCollectionEquality().equals(other.avatarUrl, avatarUrl));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(avaterUrl));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(avatarUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -522,14 +509,12 @@ class _$_Owner implements _Owner {
 }
 
 abstract class _Owner implements Owner {
-  const factory _Owner({@JsonKey(name: 'avatar_url') String avaterUrl}) =
-      _$_Owner;
+  const factory _Owner({String avatarUrl}) = _$_Owner;
 
   factory _Owner.fromJson(Map<String, dynamic> json) = _$_Owner.fromJson;
 
   @override
-  @JsonKey(name: 'avatar_url')
-  String get avaterUrl;
+  String get avatarUrl;
   @override
   @JsonKey(ignore: true)
   _$OwnerCopyWith<_Owner> get copyWith => throw _privateConstructorUsedError;

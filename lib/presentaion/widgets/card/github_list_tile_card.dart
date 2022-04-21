@@ -22,7 +22,7 @@ class GitHubListTileCard extends StatelessWidget {
                 margin: size.height > size.width
                     ? EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w)
                     : EdgeInsets.symmetric(vertical: 50.h, horizontal: 10.w),
-                child: BasicIcon(image: githubRepository!.owner.avaterUrl),
+                child: BasicIcon(image: githubRepository!.owner.avatarUrl),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

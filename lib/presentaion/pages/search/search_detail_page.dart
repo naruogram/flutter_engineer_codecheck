@@ -25,7 +25,7 @@ class SearchDetailPage extends ConsumerWidget {
               children: [
                 //背景画像
                 BackGroundImage(
-                  image: githubRepository.owner.avaterUrl,
+                  image: githubRepository.owner.avatarUrl,
                 ),
                 //戻るボタン
                 Positioned(

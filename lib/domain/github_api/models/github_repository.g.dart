@@ -17,7 +17,7 @@ _$_GitHubRepository _$$_GitHubRepositoryFromJson(Map<String, dynamic> json) =>
       openIssuesCount: json['open_issues_count'] as int? ?? 0,
       htmlUrl: json['html_url'] as String? ?? '',
       owner: json['owner'] == null
-          ? const Owner()
+          ? const Owner(avatarUrl: '')
           : Owner.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
@@ -35,9 +35,9 @@ Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
     };
 
 _$_Owner _$$_OwnerFromJson(Map<String, dynamic> json) => _$_Owner(
-      avaterUrl: json['avatar_url'] as String? ?? '',
+      avatarUrl: json['avatar_url'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$_OwnerToJson(_$_Owner instance) => <String, dynamic>{
-      'avatar_url': instance.avaterUrl,
+      'avatar_url': instance.avatarUrl,
     };
