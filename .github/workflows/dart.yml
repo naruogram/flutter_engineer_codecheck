@@ -50,4 +50,7 @@ jobs:
         # 静的解析の実行
       - name: flutter analyze
         run: flutter analyze
+
+      - name: flutter run
+        run: flutter run
       
