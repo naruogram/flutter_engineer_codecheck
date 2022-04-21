@@ -8,7 +8,7 @@ void main() async {
   runApp(
     ScreenUtilInit(
       builder: (BuildContext context) {
-        return ProviderScope(child: MyApp());
+        return const ProviderScope(child: MyApp());
       },
     ),
   );
