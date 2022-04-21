@@ -4,7 +4,7 @@ import 'package:flutter_engineer_codecheck/common/helpers/helpers.dart';
 import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/card/basic_list_card_tile.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/images/background_image.dart';
-import 'package:flutter_screenutil/src/size_extension.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SearchDetailPage extends ConsumerWidget {

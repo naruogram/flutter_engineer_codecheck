@@ -5,7 +5,7 @@ part of 'github_repository_list_state.dart';
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
-
+ // ignore: non_constant_identifier_names
 _$_GitHubRepositoryState _$$_GitHubRepositoryStateFromJson(
         Map<String, dynamic> json) =>
     _$_GitHubRepositoryState(
@@ -18,7 +18,7 @@ _$_GitHubRepositoryState _$$_GitHubRepositoryStateFromJson(
           : GitHubRepository.fromJson(
               json['github_repository'] as Map<String, dynamic>),
     );
-
+ // ignore: non_constant_identifier_names
 Map<String, dynamic> _$$_GitHubRepositoryStateToJson(
         _$_GitHubRepositoryState instance) =>
     <String, dynamic>{

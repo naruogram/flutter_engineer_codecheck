@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
-  testWidgets('my first widget test', (WidgetTester tester) async {
+  testWidgets('Card tile widget test', (WidgetTester tester) async {
     await tester.pumpWidget(
       ProviderScope(
         child: MaterialApp(
@@ -14,7 +14,7 @@ void main() {
             body: Consumer(
               builder: (context, ref, _) {
                 final List<GitHubRepository> testRepository = [
-                  GitHubRepository(
+                  const GitHubRepository(
                     fullName: 'sample/sample',
                     description: 'sampleです',
                     language: 'dart',

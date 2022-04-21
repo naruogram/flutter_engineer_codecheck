@@ -5,7 +5,7 @@ part of 'github_repository.dart';
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
-
+ // ignore: non_constant_identifier_names
 _$_GitHubRepository _$$_GitHubRepositoryFromJson(Map<String, dynamic> json) =>
     _$_GitHubRepository(
       fullName: json['full_name'] as String? ?? '',
@@ -20,7 +20,7 @@ _$_GitHubRepository _$$_GitHubRepositoryFromJson(Map<String, dynamic> json) =>
           ? const Owner(avatarUrl: '')
           : Owner.fromJson(json['owner'] as Map<String, dynamic>),
     );
-
+ // ignore: non_constant_identifier_names
 Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
     <String, dynamic>{
       'full_name': instance.fullName,
@@ -33,11 +33,11 @@ Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
       'html_url': instance.htmlUrl,
       'owner': instance.owner,
     };
-
+ // ignore: non_constant_identifier_names
 _$_Owner _$$_OwnerFromJson(Map<String, dynamic> json) => _$_Owner(
       avatarUrl: json['avatar_url'] as String? ?? '',
     );
-
+ // ignore: non_constant_identifier_names
 Map<String, dynamic> _$$_OwnerToJson(_$_Owner instance) => <String, dynamic>{
       'avatar_url': instance.avatarUrl,
     };
