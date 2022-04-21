@@ -9,19 +9,19 @@ part of 'github_repository_list_state.dart';
 _$_GitHubRepositoryState _$$_GitHubRepositoryStateFromJson(
         Map<String, dynamic> json) =>
     _$_GitHubRepositoryState(
-      githubRepositoryList: (json['githubRepositoryList'] as List<dynamic>?)
+      githubRepositoryList: (json['github_repository_list'] as List<dynamic>?)
               ?.map((e) => GitHubRepository.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <GitHubRepository>[],
-      githubRepository: json['githubRepository'] == null
+      githubRepository: json['github_repository'] == null
           ? const GitHubRepository()
           : GitHubRepository.fromJson(
-              json['githubRepository'] as Map<String, dynamic>),
+              json['github_repository'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_GitHubRepositoryStateToJson(
         _$_GitHubRepositoryState instance) =>
     <String, dynamic>{
-      'githubRepositoryList': instance.githubRepositoryList,
-      'githubRepository': instance.githubRepository,
+      'github_repository_list': instance.githubRepositoryList,
+      'github_repository': instance.githubRepository,
     };

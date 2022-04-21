@@ -1,0 +1,50 @@
+# ワークフロー名を定義(任意の名称)
+name: flutter analyze
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - develop
+
+  workflow_dispatch:
+
+
+jobs:
+
+  flutter_analyze:
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    # 該当リポジトリにチェックアウト
+      - name: checkout
+        uses: actions/checkout@v2
+
+    # flutterインストール（キャッシュする）
+      - name: flutter cache
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "2.8.1"
+          channel: "stable"
+          cache: true
+          cache-key: flutter
+          cache-path: ${{ runner.tool_cache }}/flutter
+
+      - name: install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "2.8.1"
+          channel: "stable"
+
+        # flutter versionの確認
+      - name: flutter version
+        run: flutter --version
+
+        # flutter pub get 実行
+      - name: flutter pub get
+        run: flutter pub get
+
+        # 静的解析の実行
+      - name: flutter analyze
+        run: flutter analyze
