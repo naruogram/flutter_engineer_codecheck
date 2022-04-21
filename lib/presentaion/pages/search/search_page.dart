@@ -40,7 +40,7 @@ class SearchPage extends ConsumerWidget {
                 ),
                 //loadingしているとき
                 notifier.isLoading
-                    ? SizedBox(
+                    ? const SizedBox(
                         height: 50,
                         width: 50,
                         child: CircularProgressIndicator(),

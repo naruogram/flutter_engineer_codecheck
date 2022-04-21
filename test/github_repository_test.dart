@@ -20,5 +20,4 @@ void main() {
     expect(result.owner.avatarUrl, "sample.com");
     expect(result.htmlUrl, "https//sample.jp");
   });
-  ;
 }
