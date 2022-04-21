@@ -5,7 +5,7 @@ part 'github_repository.g.dart';
 @freezed
 class GitHubRepository with _$GitHubRepository {
   const factory GitHubRepository({
-    @Default('') final String fullName,
+    @Default('') String fullName,
     @Default('') String description,
     @Default('') String language,
     @Default(0) int stargazersCount,
@@ -18,7 +18,6 @@ class GitHubRepository with _$GitHubRepository {
 
   factory GitHubRepository.fromJson(Map<String, dynamic> json) =>
       _$GitHubRepositoryFromJson(json);
-      
 }
 
 @freezed

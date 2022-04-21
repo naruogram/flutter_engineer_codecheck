@@ -43,6 +43,9 @@ jobs:
         # flutter pub get 実行
       - name: flutter pub get
         run: flutter pub get
+        #多言語ファイルの生成
+      - name: flutter gen-l10n
+        run: flutter gen-l10n
 
         # 静的解析の実行
       - name: flutter analyze
