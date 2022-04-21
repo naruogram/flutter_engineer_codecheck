@@ -24,7 +24,7 @@ linter:
     - use_full_hex_values_for_flutter_colors
     - use_key_in_widget_constructors
   
-  analyzer:
+analyzer:
     exclude:
     - '**/l10n/*.dart'
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule

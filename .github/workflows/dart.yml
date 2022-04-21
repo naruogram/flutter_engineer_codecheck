@@ -50,6 +50,6 @@ jobs:
         # 静的解析の実行
       - name: flutter analyze
         run: flutter analyze
-      
+  flutter_action:
       - name: Flutter action
         uses: subosito/flutter-action@v2.3.0
