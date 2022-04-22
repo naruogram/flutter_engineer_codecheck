@@ -81,8 +81,8 @@ $ flutter run
 
 <h4>その他</h4>
 
-[コード規約](https://github.com/yoshiki20010524/flutter_engineer_codecheck/blob/main/analysis_options.yaml)
+[コード規約](https://github.com/yoshiki20010524/flutter_engineer_codecheck/blob/main/analysis_options.yaml) : flutter_lintで実装
 
-[テスト](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/test)
+[テスト](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/test) : unitテスト、UIテスト
 
-[CI](https://github.com/yoshiki20010524/flutter_engineer_codecheck/blob/main/.github/workflows/dart.yml)
+[CI](https://github.com/yoshiki20010524/flutter_engineer_codecheck/blob/main/.github/workflows/dart.yml) : GitHub Actionsで実装
