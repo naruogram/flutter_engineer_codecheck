@@ -1,6 +1,21 @@
 # Flutter　ゆめみコーディング課題
 
-## 実際のプロダクト(ios・android)
+## セットアップの仕方
+
+```
+# セットアップの仕方
+$ git clone git@github.com:yoshiki20010524/flutter_engineer_codecheck.git
+$ cd flutter_engineer_codecheck
+
+# パッケージなどの導入
+$ flutter pub get
+$ flutter gen-l10n
+
+# ビルド
+$ flutter run
+```
+
+## 実際のプロダクト(ios・Android)
 
 <img src="https://user-images.githubusercontent.com/75286616/164646024-232f8a77-fe61-4622-9337-7743f21256aa.gif" width= "200">   <img src="https://user-images.githubusercontent.com/75286616/164644982-8475f48f-b100-4d5f-8fc2-407d0a958433.gif" width= "200">
 
@@ -38,21 +53,36 @@
 
 <h4>アーキテクチャ</h4>
 
-・ドメイン駆動設計(DDD)
+<h5>ドメイン駆動設計(DDD)</h5>
 
-## セットアップの仕方
+構成
 
-```
-# セットアップの仕方
-$ git clone git@github.com:yoshiki20010524/flutter_engineer_codecheck.git
-$ cd flutter_engineer_codecheck
+[domain](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/lib/domain/github_api) : 基本的には通信を生じる処理はここに書く
 
-# パッケージなどの導入
-$ flutter pub get
-$ flutter gen-l10n
+・service(データベース以外の処理を書く、WebAPIなど)
 
-# ビルド
-$ flutter run
-```
+[common](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/lib/common) : 共通で書く処理(色、helpersなど)
 
+・helpers(フォーマットや共通して使う関数などを書く)
 
+[presentation](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/lib/presentaion) : UI部分
+
+・pages(アプリ上で表示する画面)
+
+・widgets(共通して使うwidgetsなど)
+
+[use_case](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/lib/use_case/github_repository) : 状態管理、ユーザーからの行動に対しての処理など
+
+・notifier(ユーザーからの行動に応じた処理など)
+
+・state(状態管理)
+
+[l10n](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/lib/l10n) : 多言語対応
+
+<h4>その他</h4>
+
+[コード規約](https://github.com/yoshiki20010524/flutter_engineer_codecheck/blob/main/analysis_options.yaml)
+
+[テスト](https://github.com/yoshiki20010524/flutter_engineer_codecheck/tree/main/test)
+
+[CI](https://github.com/yoshiki20010524/flutter_engineer_codecheck/blob/main/.github/workflows/dart.yml)
