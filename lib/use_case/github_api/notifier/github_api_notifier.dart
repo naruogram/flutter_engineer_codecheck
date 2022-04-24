@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_engineer_codecheck/domain/github_api/github_api_service.dart';
-import 'package:flutter_engineer_codecheck/use_case/github_repository/state/github_repository_list_state.dart';
+import 'package:flutter_engineer_codecheck/use_case/github_api/state/github_api_list_state.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final githubRepositoryNotifierProvider =
-    StateNotifierProvider<GitHubRepositoryNotifier, GitHubRepositoryState>(
-  (ref) => GitHubRepositoryNotifier(ref: ref),
+    StateNotifierProvider<GitHubApiNotifier, GitHubApiState>(
+  (ref) => GitHubApiNotifier(ref: ref),
 );
 
-class GitHubRepositoryNotifier extends StateNotifier<GitHubRepositoryState> {
-  GitHubRepositoryNotifier({required Ref ref})
+class GitHubApiNotifier extends StateNotifier<GitHubApiState> {
+  GitHubApiNotifier({required Ref ref})
       : _ref = ref,
-        super(const GitHubRepositoryState());
+        super(const GitHubApiState());
   final Ref _ref;
 
   @override

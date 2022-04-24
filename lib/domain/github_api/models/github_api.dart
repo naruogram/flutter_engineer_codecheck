@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'github_repository.freezed.dart';
-part 'github_repository.g.dart';
+part 'github_api.freezed.dart';
+part 'github_api.g.dart';
 
 @freezed
-class GitHubRepository with _$GitHubRepository {
-  const factory GitHubRepository({
+class GitHubApi with _$GitHubApi {
+  const factory GitHubApi({
     @Default('') String fullName,
     @Default('') String description,
     @Default('') String language,
@@ -14,10 +14,10 @@ class GitHubRepository with _$GitHubRepository {
     @Default(0) int openIssuesCount,
     @Default('') String htmlUrl,
     @Default(Owner(avatarUrl: '')) Owner owner,
-  }) = _GitHubRepository;
+  }) = _GitHubApi;
 
-  factory GitHubRepository.fromJson(Map<String, dynamic> json) =>
-      _$GitHubRepositoryFromJson(json);
+  factory GitHubApi.fromJson(Map<String, dynamic> json) =>
+      _$GitHubApiFromJson(json);
 }
 
 @freezed

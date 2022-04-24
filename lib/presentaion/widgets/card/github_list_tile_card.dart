@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
+import 'package:flutter_engineer_codecheck/domain/github_api/models/github_api.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/icon/basic_icon.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GitHubListTileCard extends StatelessWidget {
   const GitHubListTileCard({Key? key, this.githubRepository}) : super(key: key);
-  final GitHubRepository? githubRepository;
+  final GitHubApi? githubRepository;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

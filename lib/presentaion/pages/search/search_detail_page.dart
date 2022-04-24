@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_engineer_codecheck/common/color.dart';
 import 'package:flutter_engineer_codecheck/common/helpers/helpers.dart';
-import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
+import 'package:flutter_engineer_codecheck/domain/github_api/models/github_api.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/card/basic_list_card_tile.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/images/background_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +10,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class SearchDetailPage extends ConsumerWidget {
   const SearchDetailPage({Key? key, required this.githubRepository})
       : super(key: key);
-  final GitHubRepository githubRepository;
+  final GitHubApi githubRepository;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;

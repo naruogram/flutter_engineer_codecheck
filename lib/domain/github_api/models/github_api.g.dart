@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'github_repository.dart';
+part of 'github_api.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
- // ignore: non_constant_identifier_names
-_$_GitHubRepository _$$_GitHubRepositoryFromJson(Map<String, dynamic> json) =>
-    _$_GitHubRepository(
+
+_$_GitHubApi _$$_GitHubApiFromJson(Map<String, dynamic> json) => _$_GitHubApi(
       fullName: json['full_name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       language: json['language'] as String? ?? '',
@@ -20,8 +19,8 @@ _$_GitHubRepository _$$_GitHubRepositoryFromJson(Map<String, dynamic> json) =>
           ? const Owner(avatarUrl: '')
           : Owner.fromJson(json['owner'] as Map<String, dynamic>),
     );
- // ignore: non_constant_identifier_names
-Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
+
+Map<String, dynamic> _$$_GitHubApiToJson(_$_GitHubApi instance) =>
     <String, dynamic>{
       'full_name': instance.fullName,
       'description': instance.description,
@@ -33,11 +32,11 @@ Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
       'html_url': instance.htmlUrl,
       'owner': instance.owner,
     };
- // ignore: non_constant_identifier_names
+
 _$_Owner _$$_OwnerFromJson(Map<String, dynamic> json) => _$_Owner(
       avatarUrl: json['avatar_url'] as String? ?? '',
     );
- // ignore: non_constant_identifier_names
+
 Map<String, dynamic> _$$_OwnerToJson(_$_Owner instance) => <String, dynamic>{
       'avatar_url': instance.avatarUrl,
     };

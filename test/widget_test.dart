@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
+import 'package:flutter_engineer_codecheck/domain/github_api/models/github_api.dart';
 import 'package:flutter_engineer_codecheck/presentaion/pages/search/search_detail_page.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/card/github_list_tile_card.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -13,8 +13,8 @@ void main() {
           home: Scaffold(
             body: Consumer(
               builder: (context, ref, _) {
-                final List<GitHubRepository> testRepository = [
-                  const GitHubRepository(
+                final List<GitHubApi> testRepository = [
+                  const GitHubApi(
                     fullName: 'sample/sample',
                     description: 'sampleです',
                     language: 'dart',

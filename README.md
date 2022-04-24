@@ -4,6 +4,10 @@
 
 ```
 # セットアップの仕方
+# flutter version 2.8.1
+# Dart version 2.16.2
+# cocoapods version 1.11.3
+
 $ git clone git@github.com:yoshiki20010524/flutter_engineer_codecheck.git
 $ cd flutter_engineer_codecheck
 

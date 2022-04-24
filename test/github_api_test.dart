@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:flutter_engineer_codecheck/domain/github_api/models/github_repository.dart';
+import 'package:flutter_engineer_codecheck/domain/github_api/models/github_api.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'fixtures/fixure.dart';
 
@@ -9,7 +9,7 @@ void main() {
     final response = fixture('get_response.json');
     Map<String, dynamic> decoded = json.decode(response);
     final testRepository = decoded['items'][0];
-    final result = GitHubRepository.fromJson(testRepository);
+    final result = GitHubApi.fromJson(testRepository);
     expect(result.fullName, "sample/sample");
     expect(result.description, "sampleです");
     expect(result.language, "dart");

@@ -3,7 +3,7 @@ import 'package:flutter_engineer_codecheck/l10n/l10n.dart';
 import 'package:flutter_engineer_codecheck/presentaion/pages/search/search_detail_page.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/card/github_list_tile_card.dart';
 import 'package:flutter_engineer_codecheck/presentaion/widgets/search_bar/search_bar.dart';
-import 'package:flutter_engineer_codecheck/use_case/github_repository/notifier/github_repository_notifier.dart';
+import 'package:flutter_engineer_codecheck/use_case/github_api/notifier/github_api_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

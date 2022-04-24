@@ -1,26 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'github_repository_list_state.dart';
+part of 'github_api_list_state.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
- // ignore: non_constant_identifier_names
-_$_GitHubRepositoryState _$$_GitHubRepositoryStateFromJson(
-        Map<String, dynamic> json) =>
-    _$_GitHubRepositoryState(
+
+_$_GitHubApiState _$$_GitHubApiStateFromJson(Map<String, dynamic> json) =>
+    _$_GitHubApiState(
       githubRepositoryList: (json['github_repository_list'] as List<dynamic>?)
-              ?.map((e) => GitHubRepository.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => GitHubApi.fromJson(e as Map<String, dynamic>))
               .toList() ??
-          const <GitHubRepository>[],
+          const <GitHubApi>[],
       githubRepository: json['github_repository'] == null
-          ? const GitHubRepository()
-          : GitHubRepository.fromJson(
+          ? const GitHubApi()
+          : GitHubApi.fromJson(
               json['github_repository'] as Map<String, dynamic>),
     );
- // ignore: non_constant_identifier_names
-Map<String, dynamic> _$$_GitHubRepositoryStateToJson(
-        _$_GitHubRepositoryState instance) =>
+
+Map<String, dynamic> _$$_GitHubApiStateToJson(_$_GitHubApiState instance) =>
     <String, dynamic>{
       'github_repository_list': instance.githubRepositoryList,
       'github_repository': instance.githubRepository,
